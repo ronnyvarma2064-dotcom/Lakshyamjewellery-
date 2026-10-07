@@ -188,12 +188,12 @@ function App() {
         </p>
 
         <div style={styles.contactButtons}>
-          <a href="tel:+91" style={styles.primaryButton}>
+          <a href="tel:+916377562064" style={styles.primaryButton}>
             Call Us
           </a>
 
           <a
-            href="https://wa.me/"
+            href=href="https://wa.me/916377562064?text=Hello%20Lakshyam%20Jewellery%2C%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20collection."
             target="_blank"
             rel="noreferrer"
             style={styles.secondaryButton}
