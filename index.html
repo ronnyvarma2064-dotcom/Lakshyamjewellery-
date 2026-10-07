@@ -1,85 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lakshyam Jewellery | Kundan • Meena • Diamond</title>
-<meta name="description" content="Lakshyam Jewellery — Jadau, Thappa, Open Setting and Silver Jewellery catalogue.">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="topbar">B2B Jewellery Catalogue • Kundan • Meena • Diamond <span>WhatsApp Enquiry Available</span></div>
-
-<header class="header">
-  <button class="menuBtn" onclick="toggleMenu()">☰</button>
-  <a class="brand" href="#home">
-    <div class="brandName">LAKSHYAM</div>
-    <div class="brandSub">JEWELLERY</div>
-    <div class="brandTag">KUNDAN • MEENA • DIAMOND</div>
-  </a>
-  <div class="headerActions">
-    <button onclick="focusSearch()" aria-label="Search">⌕</button>
-    <button onclick="showWishlist()" aria-label="Wishlist">♡ <small id="wishCount">0</small></button>
-  </div>
-</header>
-
-<nav id="nav">
-  <a href="#home">Home</a>
-  <a href="#catalogue">Catalogue</a>
-  <a href="#jadau">Jadau Jewellery</a>
-  <a href="#thappa">Thappa Jewellery</a>
-  <a href="#open">Open Setting Jewellery</a>
-  <a href="#silver">Silver Jewellery</a>
-</nav>
-
-<main id="home">
-<section class="hero">
-  <div class="heroOverlay">
-    <p class="eyebrow">TRADITION • CRAFT • ELEGANCE</p>
-    <h1>Timeless Indian Jewellery</h1>
-    <p>Discover our curated collection of Jadau, Thappa, Open Setting & Silver Jewellery.</p>
-    <a class="goldBtn" href="#catalogue">Explore Collection</a>
-  </div>
-</section>
-
-<section class="intro">
-  <p class="eyebrow">LAKSHYAM JEWELLERY</p>
-  <h2>Our Collections</h2>
-  <p>Designed for those who appreciate traditional craftsmanship with a refined modern presentation.</p>
-</section>
-
-<section id="catalogue" class="catalogue">
-  <div class="sectionHead">
-    <div>
-      <p class="eyebrow">SHOP BY COLLECTION</p>
-      <h2>Jewellery Categories</h2>
-    </div>
-    <div class="search"><input id="searchInput" oninput="renderProducts()" placeholder="Search jewellery..."><span>⌕</span></div>
-  </div>
-
-  <div class="categoryTabs" id="categoryTabs"></div>
-  <div class="subTabs" id="subTabs"></div>
-  <div class="productGrid" id="productGrid"></div>
-</section>
-
-<section class="promise">
-  <div><b>01</b><h3>Curated Designs</h3><p>Traditional jewellery presented in a clean, premium catalogue.</p></div>
-  <div><b>02</b><h3>Easy Enquiry</h3><p>Save your favourites and enquire directly on WhatsApp.</p></div>
-  <div><b>03</b><h3>Made for Business</h3><p>A B2B-friendly catalogue that can grow with your collection.</p></div>
-</section>
-</main>
-
-<footer>
-  <div>
-    <div class="brandName">LAKSHYAM</div><div class="brandSub">JEWELLERY</div>
-    <p>KUNDAN • MEENA • DIAMOND</p>
-  </div>
-  <div><h4>Collections</h4><p>Jadau Jewellery<br>Thappa Jewellery<br>Open Setting Jewellery<br>Silver Jewellery</p></div>
-  <div><h4>Enquiry</h4><p>WhatsApp: +91 63775 62064</p><a class="goldBtn small" href="https://wa.me/916377562064" target="_blank">Chat on WhatsApp</a></div>
-</footer>
-<div class="copyright">© 2026 Lakshyam Jewellery. All rights reserved.</div>
-
-<div id="modal" class="modal" onclick="closeModal(event)"><div class="modalBox" id="modalBox"></div></div>
-<script src="app.js"></script>
-</body>
-</html>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lakshyam Jewellery</title><link rel="stylesheet" href="styles.css"></head><body>
+<div class="announce">B2B JEWELLERY CATALOGUE • KUNDAN • MEENA • DIAMOND <a href="https://wa.me/916377562064">WHATSAPP ENQUIRY →</a></div>
+<header><button class="hamb" onclick="document.querySelector('nav').classList.toggle('open')">☰</button><a class="logo" href="#"><b>LAKSHYAM</b><small>JEWELLERY</small><em>KUNDAN • MEENA • DIAMOND</em></a><div class="actions">⌕　♡ <i id="count">0</i></div></header>
+<nav><a href="#catalogue">Jadau Jewellery</a><a href="#catalogue">Thappa Jewellery</a><a href="#catalogue">Open Setting Jewellery</a><a href="#catalogue">Silver Jewellery</a></nav>
+<section class="hero"><div><span>TIMELESS CRAFTSMANSHIP</span><h1>Jewellery that<br>tells a story.</h1><p>Explore our curated collection of traditional Indian jewellery.</p><a class="btn" href="#catalogue">EXPLORE COLLECTION</a></div></section>
+<section class="intro"><span>LAKSHYAM JEWELLERY</span><h2>Our Collections</h2><p>Discover refined Jadau, Thappa, Open Setting and Silver jewellery.</p></section>
+<section class="tiles"><article>JADAU<span>Explore Collection →</span></article><article>THAPPA<span>Explore Collection →</span></article><article>OPEN SETTING<span>Explore Collection →</span></article><article>SILVER<span>Explore Collection →</span></article></section>
+<section id="catalogue" class="shop"><div class="shophead"><div><span>CURATED FOR YOU</span><h2>Featured Jewellery</h2></div><div class="search"><input id="searchInput" oninput="render()" placeholder="Search designs...">⌕</div></div><div class="tabs" id="tabs"></div><div class="products" id="products"></div></section>
+<section class="about"><div class="aboutpic">LAKSHYAM</div><div><span>OUR STORY</span><h2>Tradition with a modern touch.</h2><p>Lakshyam Jewellery brings together timeless Indian craftsmanship with a clean, contemporary catalogue experience.</p><a class="btn dark" href="https://wa.me/916377562064">TALK TO US ON WHATSAPP</a></div></section>
+<section class="trust"><div><b>01</b><h3>Curated Designs</h3><p>Distinctive jewellery collections.</p></div><div><b>02</b><h3>Easy Enquiry</h3><p>Save favourites and enquire instantly.</p></div><div><b>03</b><h3>Personal Service</h3><p>Connect directly on WhatsApp.</p></div></section>
+<section class="faq"><span>NEED HELP?</span><h2>Frequently Asked Questions</h2><details><summary>How can I enquire about a design?</summary><p>Tap WhatsApp Enquiry on any product.</p></details><details><summary>Can I request product photos?</summary><p>Yes, send the design name on WhatsApp.</p></details></section>
+<footer><div class="flogo">LAKSHYAM<small>JEWELLERY</small><p>KUNDAN • MEENA • DIAMOND</p></div><div><h4>Collections</h4><p>Jadau Jewellery<br>Thappa Jewellery<br>Open Setting Jewellery<br>Silver Jewellery</p></div><div><h4>Contact</h4><p>WhatsApp: +91 63775 62064</p><a href="https://wa.me/916377562064">Start Enquiry →</a></div></footer><div class="copy">© 2026 Lakshyam Jewellery. All rights reserved.</div><script src="app.js"></script></body></html>
