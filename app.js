@@ -19,10 +19,41 @@ async function loadProducts() {
   alert("SUPABASE PRODUCTS: " + data.length);
 
   console.log("Products:", data);
-}
 
   const collectionGrid = document.querySelector(".collection-grid");
 
+  if (!collectionGrid || !data) return;
+
+  data.forEach((product) => {
+    const card = document.createElement("a");
+
+    card.href = "https://wa.me/916377562064";
+    card.target = "_blank";
+    card.className = "collection-card";
+
+    card.innerHTML = `
+      <div class="collection-image">
+        <img
+          src="${product.Image_url || ""}"
+          alt="${product.Name || "Lakshyam Jewellery"}"
+        >
+
+        <div class="collection-overlay"></div>
+
+        <span>ENQUIRE →</span>
+      </div>
+
+      <div class="collection-info">
+        <small>${product.Category || "JEWELLERY"}</small>
+        <h3>${product.Name || "Jewellery"}</h3>
+      </div>
+    `;
+
+    collectionGrid.appendChild(card);
+  });
+}
+
+loadProducts();
   if (!collectionGrid || !data) return;
 
   data.forEach((Product) => {
