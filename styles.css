@@ -459,7 +459,7 @@ button {
   align-items: center;
   background:
     linear-gradient(90deg, rgba(20,14,9,0.9), rgba(20,14,9,0.5)),
-    url("/Hero4.svg") center / cover;
+    url("./Hero4.svg") center / cover;
   color: white;
 }
 
