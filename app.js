@@ -61,8 +61,8 @@ function App() {
 
         <a
           href="https://wa.me/916377562064?text=Hello%20Lakshyam%20Jewellery"
-          target="_blank"
-          rel="noreferrer"
+          
+
           style={styles.whatsapp}
         >
           WhatsApp
@@ -194,9 +194,9 @@ function App() {
 
           <a
             href="https://wa.me/916377562064?text=Hello%20Lakshyam%20Jewellery"
-            target="_blank"
-            rel="noreferrer"
-            style={styles.secondaryButton}
+            
+            
+            style={styles.secondarybutton}
           >
             WhatsApp Enquiry
           </a>
