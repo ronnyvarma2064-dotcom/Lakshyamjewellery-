@@ -1,12 +1,696 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lakshyam Jewellery</title><link rel="stylesheet" href="styles.css"></head><body>
-<div class="announce">B2B JEWELLERY CATALOGUE • KUNDAN • MEENA • DIAMOND <a href="https://wa.me/916377562064">WHATSAPP ENQUIRY →</a></div>
-<header><button class="hamb" onclick="document.querySelector('nav').classList.toggle('open')">☰</button><a class="logo" href="#"><b>LAKSHYAM</b><small>JEWELLERY</small><em>KUNDAN • MEENA • DIAMOND</em></a><div class="actions">⌕　♡ <i id="count">0</i></div></header>
-<nav><a href="#catalogue">Jadau Jewellery</a><a href="#catalogue">Thappa Jewellery</a><a href="#catalogue">Open Setting Jewellery</a><a href="#catalogue">Silver Jewellery</a></nav>
-<section class="hero"><div><span>TIMELESS CRAFTSMANSHIP</span><h1>Jewellery that<br>tells a story.</h1><p>Explore our curated collection of traditional Indian jewellery.</p><a class="btn" href="#catalogue">EXPLORE COLLECTION</a></div></section>
-<section class="intro"><span>LAKSHYAM JEWELLERY</span><h2>Our Collections</h2><p>Discover refined Jadau, Thappa, Open Setting and Silver jewellery.</p></section>
-<section class="tiles"><article>JADAU<span>Explore Collection →</span></article><article>THAPPA<span>Explore Collection →</span></article><article>OPEN SETTING<span>Explore Collection →</span></article><article>SILVER<span>Explore Collection →</span></article></section>
-<section id="catalogue" class="shop"><div class="shophead"><div><span>CURATED FOR YOU</span><h2>Featured Jewellery</h2></div><div class="search"><input id="searchInput" oninput="render()" placeholder="Search designs...">⌕</div></div><div class="tabs" id="tabs"></div><div class="products" id="products"></div></section>
-<section class="about"><div class="aboutpic">LAKSHYAM</div><div><span>OUR STORY</span><h2>Tradition with a modern touch.</h2><p>Lakshyam Jewellery brings together timeless Indian craftsmanship with a clean, contemporary catalogue experience.</p><a class="btn dark" href="https://wa.me/916377562064">TALK TO US ON WHATSAPP</a></div></section>
-<section class="trust"><div><b>01</b><h3>Curated Designs</h3><p>Distinctive jewellery collections.</p></div><div><b>02</b><h3>Easy Enquiry</h3><p>Save favourites and enquire instantly.</p></div><div><b>03</b><h3>Personal Service</h3><p>Connect directly on WhatsApp.</p></div></section>
-<section class="faq"><span>NEED HELP?</span><h2>Frequently Asked Questions</h2><details><summary>How can I enquire about a design?</summary><p>Tap WhatsApp Enquiry on any product.</p></details><details><summary>Can I request product photos?</summary><p>Yes, send the design name on WhatsApp.</p></details></section>
-<footer><div class="flogo">LAKSHYAM<small>JEWELLERY</small><p>KUNDAN • MEENA • DIAMOND</p></div><div><h4>Collections</h4><p>Jadau Jewellery<br>Thappa Jewellery<br>Open Setting Jewellery<br>Silver Jewellery</p></div><div><h4>Contact</h4><p>WhatsApp: +91 63775 62064</p><a href="https://wa.me/916377562064">Start Enquiry →</a></div></footer><div class="copy">© 2026 Lakshyam Jewellery. All rights reserved.</div><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lakshyam Jewellery | Kundan • Meena • Diamond</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="site">
+
+  <div class="topbar">
+    <div>B2B JEWELLERY • KUNDAN • MEENA • DIAMOND</div>
+    <a href="https://wa.me/916377562064" target="_blank">WHATSAPP ENQUIRY →</a>
+  </div>
+
+  <header class="header">
+
+    <a href="#home" class="brand">
+      <span class="brand-mark">L</span>
+      <span class="brand-name">
+        LAKSHYAM
+        <small>JEWELLERY</small>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#home">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#featured">Featured</a>
+      <a href="#about">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a
+        class="header-whatsapp"
+        href="https://wa.me/916377562064"
+        target="_blank"
+      >
+        Enquire on WhatsApp
+      </a>
+
+      <button class="menu-button" id="menuButton">☰</button>
+    </div>
+
+  </header>
+
+  <div class="category-strip">
+    <a href="#collections">Jadau Jewellery</a>
+    <a href="#collections">Kundan Jewellery</a>
+    <a href="#collections">Meena Jewellery</a>
+    <a href="#collections">Diamond Jewellery</a>
+    <a href="#collections">Bridal Jewellery</a>
+  </div>
+
+  <main id="home">
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-image">
+
+        <img id="heroImage" src="Hero.svg" alt="Lakshyam Jewellery">
+
+        <div class="hero-shade"></div>
+
+        <div class="hero-content">
+
+          <div class="eyebrow" id="heroSmall">
+            KUNDAN • MEENA • DIAMOND
+          </div>
+
+          <h1 id="heroTitle">
+            Jewellery that<br>tells a story.
+          </h1>
+
+          <p id="heroText">
+            Discover refined Indian jewellery crafted for discerning buyers
+            and jewellery businesses.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#collections" class="gold-button">
+              EXPLORE COLLECTION
+            </a>
+
+            <a
+              href="https://wa.me/916377562064"
+              target="_blank"
+              class="outline-button"
+            >
+              B2B ENQUIRY
+            </a>
+
+          </div>
+
+        </div>
+
+        <button class="slider-arrow left" id="prev">←</button>
+        <button class="slider-arrow right" id="next">→</button>
+
+        <div class="slider-dots">
+          <button class="active" data-slide="0"></button>
+          <button data-slide="1"></button>
+          <button data-slide="2"></button>
+          <button data-slide="3"></button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="intro section">
+
+      <div class="intro-small">
+        LAKSHYAM JEWELLERY
+      </div>
+
+      <h2>
+        Crafted with tradition.<br>
+        Presented with distinction.
+      </h2>
+
+      <p>
+        Lakshyam Jewellery brings together the richness of Indian jewellery
+        traditions with a clean and refined catalogue experience.
+        Explore our Kundan, Meena, Jadau and Diamond collections.
+      </p>
+
+    </section>
+
+
+    <!-- COLLECTIONS -->
+    <section id="collections" class="section collections-section">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="eyebrow dark">OUR COLLECTIONS</span>
+          <h2>Discover the collection.</h2>
+        </div>
+
+        <p>
+          A curated selection created for jewellery lovers,
+          retailers and trade partners.
+        </p>
+
+      </div>
+
+
+      <div class="collection-grid">
+
+        <a
+          href="https://wa.me/916377562064"
+          target="_blank"
+          class="collection-card"
+        >
+          <div class="collection-image">
+            <img src="Hero.svg" alt="Jadau Jewellery">
+            <div class="collection-overlay"></div>
+            <span>EXPLORE →</span>
+          </div>
+
+          <div class="collection-info">
+            <small>ROYAL CRAFTSMANSHIP</small>
+            <h3>Jadau Jewellery</h3>
+          </div>
+        </a>
+
+
+        <a
+          href="https://wa.me/916377562064"
+          target="_blank"
+          class="collection-card"
+        >
+          <div class="collection-image">
+            <img src="Hero2.svg" alt="Kundan Jewellery">
+            <div class="collection-overlay"></div>
+            <span>EXPLORE →</span>
+          </div>
+
+          <div class="collection-info">
+            <small>TIMELESS TRADITION</small>
+            <h3>Kundan Jewellery</h3>
+          </div>
+        </a>
+
+
+        <a
+          href="https://wa.me/916377562064"
+          target="_blank"
+          class="collection-card"
+        >
+          <div class="collection-image">
+            <img src="Hero3.svg" alt="Meena Jewellery">
+            <div class="collection-overlay"></div>
+            <span>EXPLORE →</span>
+          </div>
+
+          <div class="collection-info">
+            <small>COLOURFUL ARTISTRY</small>
+            <h3>Meena Jewellery</h3>
+          </div>
+        </a>
+
+
+        <a
+          href="https://wa.me/916377562064"
+          target="_blank"
+          class="collection-card"
+        >
+          <div class="collection-image">
+            <img src="Hero4.svg" alt="Diamond Jewellery">
+            <div class="collection-overlay"></div>
+            <span>EXPLORE →</span>
+          </div>
+
+          <div class="collection-info">
+            <small>MODERN BRILLIANCE</small>
+            <h3>Diamond Jewellery</h3>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- B2B -->
+    <section class="b2b">
+
+      <div class="b2b-inner">
+
+        <span class="eyebrow">
+          FOR JEWELLERY BUSINESSES
+        </span>
+
+        <h2>
+          Built for the<br>
+          trade.
+        </h2>
+
+        <p>
+          Looking for distinctive jewellery collections for your business?
+          Connect with Lakshyam Jewellery for B2B and wholesale enquiries.
+        </p>
+
+        <a
+          href="https://wa.me/916377562064"
+          target="_blank"
+          class="gold-button"
+        >
+          TALK TO US ON WHATSAPP →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURED -->
+    <section id="featured" class="section featured-section">
+
+      <div class="center-heading">
+
+        <span class="eyebrow dark">
+          CURATED FOR YOU
+        </span>
+
+        <h2>Featured Jewellery</h2>
+
+        <p>
+          Explore a selection of our signature jewellery styles.
+        </p>
+
+      </div>
+
+
+      <div class="featured-grid">
+
+        <a
+          href="https://wa.me/916377562064"
+          target="_blank"
+          class="featured-card"
+        >
+          <div class="featured-image">
+            <img src="Hero.svg" alt="Royal Kundan">
+          </div>
+
+          <div class="featured-info">
+            <small>KUNDAN COLLECTION</small>
+            <h3>Royal Kundan</h3>
+            <span>ENQUIRE →</span>
+          </div>
+        </a>
+
+
+        <a
+          href="https://wa.me/916377562064"
+          target="_blank"
+          class="featured-card"
+        >
+          <div class="featured-image">
+            <img src="Hero3.svg" alt="Heritage Meena">
+          </div>
+
+          <div class="featured-info">
+            <small>MEENA COLLECTION</small>
+            <h3>Heritage Meena</h3>
+            <span>ENQUIRE →</span>
+          </div>
+        </a>
+
+
+        <a
+          href="https://wa.me/916377562064"
+          target="_blank"
+          class="featured-card"
+        >
+          <div class="featured-image">
+            <img src="Hero4.svg" alt="Signature Diamond">
+          </div>
+
+          <div class="featured-info">
+            <small>DIAMOND COLLECTION</small>
+            <h3>Signature Diamond</h3>
+            <span>ENQUIRE →</span>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- STORY -->
+    <section id="about" class="story">
+
+      <div class="story-image">
+        <img src="Hero2.svg" alt="Lakshyam Jewellery">
+      </div>
+
+      <div class="story-content">
+
+        <span class="eyebrow dark">
+          OUR STORY
+        </span>
+
+        <h2>
+          Tradition with a modern touch.
+        </h2>
+
+        <p>
+          Jewellery is more than an ornament. It carries culture,
+          craftsmanship and stories from one generation to another.
+        </p>
+
+        <p>
+          Lakshyam Jewellery is built around this idea — bringing
+          traditional Indian jewellery into a refined catalogue for
+          today's customers and jewellery businesses.
+        </p>
+
+        <div class="story-points">
+
+          <div>
+            <strong>01</strong>
+            <span>Curated Designs</span>
+          </div>
+
+          <div>
+            <strong>02</strong>
+            <span>Easy Enquiry</span>
+          </div>
+
+          <div>
+            <strong>03</strong>
+            <span>Personal Service</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- VALUES -->
+    <section class="section values">
+
+      <div class="center-heading">
+
+        <span class="eyebrow dark">
+          WHY LAKSHYAM
+        </span>
+
+        <h2>
+          Made for lasting relationships.
+        </h2>
+
+      </div>
+
+
+      <div class="values-grid">
+
+        <div class="value">
+          <span>01</span>
+          <h3>Craftsmanship</h3>
+          <p>
+            Traditional Indian jewellery aesthetics with attention to detail.
+          </p>
+        </div>
+
+        <div class="value">
+          <span>02</span>
+          <h3>Curated Collections</h3>
+          <p>
+            Kundan, Meena, Jadau and Diamond styles brought together.
+          </p>
+        </div>
+
+        <div class="value">
+          <span>03</span>
+          <h3>B2B Focus</h3>
+          <p>
+            A simple way for jewellery businesses to enquire and connect.
+          </p>
+        </div>
+
+        <div class="value">
+          <span>04</span>
+          <h3>Personal Service</h3>
+          <p>
+            Direct communication for genuine product and business enquiries.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+      <div>
+
+        <span class="eyebrow">
+          LET'S CONNECT
+        </span>
+
+        <h2>
+          Looking for something<br>
+          special?
+        </h2>
+
+      </div>
+
+      <a
+        href="https://wa.me/916377562064"
+        target="_blank"
+        class="light-button"
+      >
+        WHATSAPP ENQUIRY →
+      </a>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section faq">
+
+      <div class="center-heading">
+
+        <span class="eyebrow dark">
+          NEED HELP?
+        </span>
+
+        <h2>
+          Frequently Asked Questions
+        </h2>
+
+      </div>
+
+
+      <div class="faq-list">
+
+        <details>
+          <summary>
+            How can I enquire about a design?
+          </summary>
+
+          <p>
+            Use the WhatsApp enquiry button and connect directly
+            with Lakshyam Jewellery.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>
+            Can I request product photos?
+          </summary>
+
+          <p>
+            Yes. Send your enquiry on WhatsApp and discuss the
+            required designs directly.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>
+            Do you handle B2B / wholesale enquiries?
+          </summary>
+
+          <p>
+            Yes. Lakshyam Jewellery is focused on jewellery trade
+            and wholesale enquiries.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>
+            Can I enquire about Kundan and Meena jewellery?
+          </summary>
+
+          <p>
+            Yes. You can enquire about Kundan, Meena, Jadau and
+            Diamond jewellery through WhatsApp.
+          </p>
+        </details>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+
+      <div class="contact-inner">
+
+        <div>
+
+          <span class="eyebrow">
+            LAKSHYAM JEWELLERY
+          </span>
+
+          <h2>
+            Let's talk jewellery.
+          </h2>
+
+          <p>
+            For collections, product enquiries and B2B opportunities,
+            connect with us directly.
+          </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+          <small>WHATSAPP</small>
+
+          <strong>
+            +91 63775 62064
+          </strong>
+
+          <a
+            href="https://wa.me/916377562064"
+            target="_blank"
+          >
+            START ENQUIRY →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+
+        <div class="footer-logo">
+
+          <span>L</span>
+
+          <div>
+            LAKSHYAM
+            <small>JEWELLERY</small>
+          </div>
+
+        </div>
+
+        <p>
+          KUNDAN • MEENA • DIAMOND
+        </p>
+
+        <span>
+          Premium Indian Jewellery • B2B & Wholesale
+        </span>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Collections</h4>
+
+        <a href="#collections">Jadau Jewellery</a>
+        <a href="#collections">Kundan Jewellery</a>
+        <a href="#collections">Meena Jewellery</a>
+        <a href="#collections">Diamond Jewellery</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Company</h4>
+
+        <a href="#about">Our Story</a>
+        <a href="#featured">Featured</a>
+        <a href="#contact">Contact</a>
+        <a href="#home">Back to top ↑</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Contact</h4>
+
+        <span>WhatsApp</span>
+
+        <strong>
+          +91 63775 62064
+        </strong>
+
+        <a
+          href="https://wa.me/916377562064"
+          target="_blank"
+        >
+          Start Enquiry →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Lakshyam Jewellery. All rights reserved.
+      </span>
+
+      <span>
+        KUNDAN • MEENA • DIAMOND
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <a
+    href="https://wa.me/916377562064"
+    target="_blank"
+    class="floating-whatsapp"
+  >
+    WA
+  </a>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
