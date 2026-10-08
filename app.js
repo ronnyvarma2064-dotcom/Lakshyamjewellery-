@@ -16,7 +16,7 @@ async function loadProducts() {
     return;
   }
 
-  alert("SUPABASE PRODUCTS: " + data.length);
+  
 
   console.log("Products:", data);
 
