@@ -7,15 +7,19 @@ const supabaseClient = window.supabase.createClient(
 
 async function loadProducts() {
   const { data, error } = await supabaseClient
-    .from("products")
+    .from("Products")
     .select("*");
 
   if (error) {
-    console.error("Products load error:", error);
+    alert("SUPABASE ERROR: " + error.message);
+    console.error(error);
     return;
   }
 
+  alert("SUPABASE PRODUCTS: " + data.length);
+
   console.log("Products:", data);
+}
 
   const collectionGrid = document.querySelector(".collection-grid");
 
