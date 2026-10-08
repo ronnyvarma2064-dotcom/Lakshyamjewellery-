@@ -60,7 +60,7 @@ function App() {
         </nav>
 
         <a
-          href=href="https://wa.me/916377562064?text=Hello%20Lakshyam%20Jewellery%2C%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20collection"
+          href="https://wa.me/916377562064?text=Hello%20Lakshyam%20Jewellery"
           target="_blank"
           rel="noreferrer"
           style={styles.whatsapp}
@@ -193,7 +193,7 @@ function App() {
           </a>
 
           <a
-            href=href=https://wa.me/916377562064?text=Hello%20Lakshyam%20Jewellery%2C%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20coll
+            href=https://wa.me/916377562064?text=Hello%20Lakshyam%20Jewellery%2C%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20coll
             target="_blank"
             rel="noreferrer"
             style={styles.secondaryButton}
