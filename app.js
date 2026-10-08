@@ -21,25 +21,25 @@ async function loadProducts() {
 loadProducts();
 const slides = [
   {
-    image: "Hero.svg",
+    image: "hero.svg",
     small: "KUNDAN • MEENA • DIAMOND",
     title: "Jewellery that<br>tells a story.",
     text: "Discover refined Indian jewellery crafted for discerning buyers and jewellery businesses."
   },
   {
-    image: "Hero2.svg",
+    image: "hero2.svg",
     small: "ROYAL KUNDAN",
     title: "The beauty of<br>timeless craft.",
     text: "Traditional Kundan artistry presented with a sophisticated modern expression."
   },
   {
-    image: "Hero3.svg",
+    image: "hero3.svg",
     small: "MEENA COLLECTION",
     title: "Artistry in<br>every detail.",
     text: "Rich colour, intricate detail and Indian heritage come together beautifully."
   },
   {
-    image: "Hero4.svg",
+    image: "hero4.svg",
     small: "DIAMOND COLLECTION",
     title: "Brilliance,<br>beautifully refined.",
     text: "Elegant diamond designs created for memorable occasions and modern collections."
