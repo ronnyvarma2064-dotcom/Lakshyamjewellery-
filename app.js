@@ -59,14 +59,20 @@ function App() {
           <a href="#contact">Contact</a>
         </nav>
 
-        <a
-          href="https://api.whatsapp.com/send?phone=916377562064&text=Hello%20Lakshyam%20Jewellery"
-          
-
-          style={styles.whatsapp}
-        >
-          WhatsApp
-        </a>
+        <button
+  onClick={() => {
+    window.location.href =
+      "https://wa.me/916377562064?text=" +
+      encodeURIComponent("Hello Lakshyam Jewellery");
+  }}
+  style={{
+    ...styles.whatsapp,
+    border: "none",
+    cursor: "pointer",
+  }}
+>
+  WhatsApp
+</button>
       </header>
 
       {/* HERO */}
@@ -192,14 +198,19 @@ function App() {
             Call Us
           </a>
 
-          <a
-            href="https://api.whatsapp.com/send?phone=916377562064&text=Hello%20Lakshyam%20Jewellery"
-            
-            
-            style={styles.secondarybutton}
-          >
-            WhatsApp Enquiry
-          </a>
+          <button
+  onClick={() => {
+    window.location.href =
+      "https://wa.me/916377562064?text=" +
+      encodeURIComponent("Hello Lakshyam Jewellery");
+  }}
+  style={{
+    ...styles.secondaryButton,
+    cursor: "pointer",
+  }}
+>
+  WhatsApp Enquiry
+</button>
         </div>
       </section>
 
