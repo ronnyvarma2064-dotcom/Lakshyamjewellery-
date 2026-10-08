@@ -59,20 +59,12 @@ function App() {
           <a href="#contact">Contact</a>
         </nav>
 
-        <button
-  onClick={() => {
-    window.location.href =
-      "https://wa.me/916377562064?text=" +
-      encodeURIComponent("Hello Lakshyam Jewellery");
-  }}
-  style={{
-    ...styles.whatsapp,
-    border: "none",
-    cursor: "pointer",
-  }}
+        <a
+  href="https://wa.me/916377562064?text=Hello%20Lakshyam%20Jewellery"
+  style={styles.whatsapp}
 >
   WhatsApp
-</button>
+</a>
       </header>
 
       {/* HERO */}
