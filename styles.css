@@ -24,7 +24,9 @@ a {
   font-family: Georgia, "Times New Roman", serif;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .header {
   min-height: 78px;
@@ -33,11 +35,12 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background: rgba(255, 253, 249, 0.98);
+  background: rgba(255, 253, 249, 0.97);
   border-bottom: 1px solid #e7dfd3;
   position: sticky;
   top: 0;
   z-index: 100;
+  backdrop-filter: blur(12px);
 }
 
 .logo-area {
@@ -50,8 +53,8 @@ a {
 }
 
 .logo {
-  width: 43px;
-  height: 43px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid #b5965c;
   display: flex;
@@ -59,6 +62,15 @@ a {
   justify-content: center;
   font-size: 23px;
   color: #9a783d;
+  position: relative;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid #dfcda7;
+  border-radius: 50%;
 }
 
 .brand {
@@ -77,29 +89,53 @@ a {
 .nav {
   display: flex;
   align-items: center;
-  gap: 27px;
+  gap: 28px;
 }
 
 .nav a {
   color: #3a3027;
   text-decoration: none;
   font-size: 13px;
-  transition: color 0.2s;
+  position: relative;
+  padding: 8px 0;
+  transition: color 0.25s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0;
+  height: 1px;
+  background: #92713c;
+  transition: width 0.25s ease;
 }
 
 .nav a:hover {
   color: #92713c;
 }
 
+.nav a:hover::after {
+  width: 100%;
+}
+
 .header-button {
   color: #fff;
   background: #92713c;
-  border: none;
-  padding: 11px 18px;
+  border: 1px solid #92713c;
+  padding: 11px 19px;
   border-radius: 2px;
   font-size: 12px;
   cursor: pointer;
   white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.header-button:hover {
+  background: #765827;
+  border-color: #765827;
+  transform: translateY(-1px);
 }
 
 .menu-button {
@@ -113,7 +149,9 @@ a {
   cursor: pointer;
 }
 
-/* COMMON */
+/* =========================
+   COMMON
+========================= */
 
 .eyebrow {
   color: #9a783d;
@@ -133,6 +171,14 @@ a {
   text-decoration: none;
   font-size: 12px;
   letter-spacing: 0.7px;
+  transition: all 0.25s ease;
+}
+
+.primary-button:hover {
+  background: #765827;
+  border-color: #765827;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(65, 45, 18, 0.16);
 }
 
 .secondary-button {
@@ -145,6 +191,14 @@ a {
   text-decoration: none;
   font-size: 12px;
   letter-spacing: 0.7px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.secondary-button:hover {
+  background: #92713c;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .buttons {
@@ -154,7 +208,9 @@ a {
   flex-wrap: wrap;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
   min-height: calc(100vh - 78px);
@@ -175,16 +231,22 @@ a {
   min-height: 620px;
   object-fit: cover;
   display: block;
+  transition: transform 0.7s ease;
+}
+
+.hero-image-wrap:hover .hero-image {
+  transform: scale(1.015);
 }
 
 .image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.02),
-    rgba(0, 0, 0, 0.1)
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.02),
+      rgba(0, 0, 0, 0.13)
+    );
   pointer-events: none;
 }
 
@@ -202,6 +264,12 @@ a {
   line-height: 1;
   cursor: pointer;
   z-index: 3;
+  transition: all 0.25s ease;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-50%) scale(1.06);
 }
 
 .arrow-left {
@@ -232,7 +300,7 @@ a {
   background: #fff;
   opacity: 0.55;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: all 0.25s ease;
 }
 
 .dot-active {
@@ -274,7 +342,9 @@ a {
   text-transform: uppercase;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
   padding: 100px 6%;
@@ -308,7 +378,9 @@ a {
   margin: 0 auto;
 }
 
-/* COLLECTIONS */
+/* =========================
+   COLLECTIONS
+========================= */
 
 .cards {
   display: grid;
@@ -322,6 +394,16 @@ a {
   background: #faf8f4;
   border: 1px solid #e6ddcf;
   overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.collection-card:hover {
+  transform: translateY(-7px);
+  border-color: #c7aa73;
+  box-shadow: 0 18px 38px rgba(45, 32, 18, 0.12);
 }
 
 .card-image-wrap {
@@ -336,6 +418,11 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.55s ease;
+}
+
+.collection-card:hover .card-image {
+  transform: scale(1.045);
 }
 
 .card-overlay {
@@ -376,9 +463,16 @@ a {
   color: #92713c;
   text-decoration: none;
   font-size: 12px;
+  transition: letter-spacing 0.25s ease;
 }
 
-/* SPLIT SECTIONS */
+.card-body a:hover {
+  letter-spacing: 1px;
+}
+
+/* =========================
+   SPLIT SECTIONS
+========================= */
 
 .split-section {
   display: flex;
@@ -389,6 +483,7 @@ a {
 .split-image {
   width: 50%;
   min-height: 560px;
+  overflow: hidden;
 }
 
 .split-image img {
@@ -396,6 +491,11 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s ease;
+}
+
+.split-section:hover .split-image img {
+  transform: scale(1.015);
 }
 
 .split-content {
@@ -423,7 +523,14 @@ a {
   line-height: 1.5;
 }
 
-/* WHY LAKSHYAM */
+.feature-list div {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(145, 113, 60, 0.18);
+}
+
+/* =========================
+   WHY LAKSHYAM
+========================= */
 
 .strength-grid {
   max-width: 1200px;
@@ -438,6 +545,16 @@ a {
   border: 1px solid #e4dacb;
   padding: 30px;
   min-height: 185px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.strength-card:hover {
+  transform: translateY(-5px);
+  border-color: #c7aa73;
+  box-shadow: 0 14px 28px rgba(45, 32, 18, 0.09);
 }
 
 .strength-icon {
@@ -459,7 +576,9 @@ a {
   margin: 0;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about-section {
   background: #fffdf9;
@@ -492,7 +611,9 @@ a {
   font-size: 12px;
 }
 
-/* CTA */
+/* =========================
+   CTA
+========================= */
 
 .cta {
   text-align: center;
@@ -525,9 +646,17 @@ a {
   font-size: 12px;
   letter-spacing: 0.7px;
   border-radius: 2px;
+  transition: all 0.25s ease;
 }
 
-/* CONTACT */
+.light-button:hover {
+  background: #d0b477;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact {
   text-align: center;
@@ -559,6 +688,12 @@ a {
   padding: 22px;
   background: #f5efe6;
   border: 1px solid #e5dacb;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  border-color: #c7aa73;
 }
 
 .contact-icon {
@@ -594,7 +729,9 @@ a {
   flex-wrap: wrap;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
   padding: 50px 6% 25px;
@@ -641,6 +778,11 @@ a {
   color: #d9d0c6;
   text-decoration: none;
   font-size: 12px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #c7aa73;
 }
 
 .footer-bottom {
@@ -652,7 +794,9 @@ a {
   font-size: 10px;
 }
 
-/* TABLET */
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 1050px) {
   .nav {
@@ -676,7 +820,9 @@ a {
   }
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 760px) {
   .header {
@@ -730,6 +876,10 @@ a {
     padding: 16px 22px;
     font-size: 13px;
     border-bottom: 1px solid #eee7dc;
+  }
+
+  .nav a::after {
+    display: none;
   }
 
   .hero {
@@ -872,7 +1022,9 @@ a {
   }
 }
 
-/* SMALL PHONES */
+/* =========================
+   SMALL PHONES
+========================= */
 
 @media (max-width: 400px) {
   .hero-content h1 {
