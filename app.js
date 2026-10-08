@@ -21,7 +21,7 @@ async function loadProducts() {
 
   if (!collectionGrid || !data) return;
 
-  data.forEach((product) => {
+  data.forEach((Product) => {
     const card = document.createElement("a");
 
     card.href = "https://wa.me/916377562064";
@@ -31,16 +31,16 @@ async function loadProducts() {
     card.innerHTML = `
       <div class="collection-image">
         <img
-          src="${product.Image_url || ""}"
-          alt="${product.Name || "Lakshyam Jewellery"}"
+          src="${Product.Image_url || ""}"
+          alt="${Product.Name || "Lakshyam Jewellery"}"
         >
         <div class="collection-overlay"></div>
         <span>ENQUIRE →</span>
       </div>
 
       <div class="collection-info">
-        <small>${product.Category || "JEWELLERY"}</small>
-        <h3>${product.Name || "Jewellery"}</h3>
+        <small>${Product.Category || "JEWELLERY"}</small>
+        <h3>${Product.Name || "Jewellery"}</h3>
       </div>
     `;
 
