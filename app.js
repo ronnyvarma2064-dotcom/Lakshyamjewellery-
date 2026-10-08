@@ -1,493 +1,503 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-const slides = [
+const whatsapp = "https://wa.me/916377562064";
+
+const categories = [
   {
+    title: "Jadau Jewellery",
+    subtitle: "Royal craftsmanship",
     image: "/Hero.svg",
-    eyebrow: "KUNDAN • MEENA • DIAMOND",
-    title: "Timeless Elegance",
-    text: "Traditional Indian craftsmanship presented with a refined modern expression.",
   },
   {
+    title: "Kundan Jewellery",
+    subtitle: "Timeless tradition",
     image: "/Hero2.svg",
-    eyebrow: "ROYAL KUNDAN",
-    title: "Crafted for Royalty",
-    text: "Discover handcrafted Kundan jewellery created for a distinctive royal look.",
   },
   {
+    title: "Meena Jewellery",
+    subtitle: "Colourful artistry",
     image: "/Hero3.svg",
-    eyebrow: "MEENA COLLECTION",
-    title: "Artistry in Every Detail",
-    text: "Rich colours, intricate craftsmanship and Indian heritage come together.",
   },
   {
+    title: "Diamond Jewellery",
+    subtitle: "Modern brilliance",
     image: "/Hero4.svg",
-    eyebrow: "DIAMOND COLLECTION",
-    title: "Forever Brilliant",
-    text: "Elegant jewellery designed for unforgettable moments.",
   },
 ];
 
-const collections = [
+const featured = [
   {
+    title: "Royal Kundan",
+    category: "KUNDAN COLLECTION",
     image: "/Hero.svg",
-    title: "Kundan",
-    text: "Traditional handcrafted Kundan jewellery with timeless royal appeal.",
   },
   {
-    image: "/Hero2.svg",
-    title: "Meena",
-    text: "Beautiful Meenakari craftsmanship inspired by Indian heritage.",
-  },
-  {
+    title: "Heritage Meena",
+    category: "MEENA COLLECTION",
     image: "/Hero3.svg",
-    title: "Diamond",
-    text: "Elegant diamond jewellery created for refined occasions.",
   },
   {
+    title: "Signature Diamond",
+    category: "DIAMOND COLLECTION",
     image: "/Hero4.svg",
-    title: "Bridal",
-    text: "Royal jewellery pieces created for unforgettable celebrations.",
-  },
-];
-
-const strengths = [
-  {
-    icon: "✦",
-    title: "Premium Craftsmanship",
-    text: "Carefully crafted jewellery with attention to detail and finish.",
-  },
-  {
-    icon: "◇",
-    title: "Traditional Expertise",
-    text: "Indian jewellery heritage combined with contemporary design.",
-  },
-  {
-    icon: "♢",
-    title: "B2B Focus",
-    text: "Collections and solutions designed for jewellery businesses.",
-  },
-  {
-    icon: "✓",
-    title: "Quality & Trust",
-    text: "A professional approach focused on long-term business relationships.",
-  },
-  {
-    icon: "◆",
-    title: "Elegant Collections",
-    text: "Kundan, Meena, Diamond and Bridal jewellery in one destination.",
-  },
-  {
-    icon: "→",
-    title: "Business Support",
-    text: "Easy enquiry and collaboration support for trade partners.",
   },
 ];
 
 function App() {
-  const [activeSlide, setActiveSlide] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [slide, setSlide] = useState(0);
 
-  const slide = slides[activeSlide];
+  const slides = [
+    {
+      image: "/Hero.svg",
+      small: "KUNDAN • MEENA • DIAMOND",
+      title: "Jewellery that tells a story.",
+      text: "Discover refined Indian jewellery crafted for discerning buyers and jewellery businesses.",
+    },
+    {
+      image: "/Hero2.svg",
+      small: "ROYAL KUNDAN",
+      title: "The beauty of timeless craft.",
+      text: "Traditional Kundan artistry presented with a sophisticated modern expression.",
+    },
+    {
+      image: "/Hero3.svg",
+      small: "MEENA COLLECTION",
+      title: "Artistry in every detail.",
+      text: "Rich colour, intricate detail and Indian heritage come together beautifully.",
+    },
+    {
+      image: "/Hero4.svg",
+      small: "DIAMOND COLLECTION",
+      title: "Brilliance, beautifully refined.",
+      text: "Elegant diamond designs created for memorable occasions and modern collections.",
+    },
+  ];
 
   const nextSlide = () => {
-    setActiveSlide((prev) => (prev + 1) % slides.length);
+    setSlide((current) => (current + 1) % slides.length);
   };
 
-  const prevSlide = () => {
-    setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const previousSlide = () => {
+    setSlide((current) => (current - 1 + slides.length) % slides.length);
   };
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className="page">
+    <div className="site">
+
+      {/* TOP BAR */}
+      <div className="topbar">
+        <div>B2B JEWELLERY • KUNDAN • MEENA • DIAMOND</div>
+        <a href={whatsapp} target="_blank" rel="noreferrer">
+          WHATSAPP ENQUIRY →
+        </a>
+      </div>
+
       {/* HEADER */}
       <header className="header">
-        <a href="#home" className="logo-area" onClick={closeMenu}>
-          <div className="logo">L</div>
-
-          <div>
-            <div className="brand">LAKSHYAM</div>
-            <div className="brand-sub">JEWELLERY</div>
-          </div>
+        <a href="#home" className="brand" onClick={closeMenu}>
+          <span className="brand-mark">L</span>
+          <span className="brand-name">
+            LAKSHYAM
+            <small>JEWELLERY</small>
+          </span>
         </a>
 
-        <button
-          className="menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? "×" : "☰"}
-        </button>
-
-        <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
-          <a href="#home" onClick={closeMenu}>
-            Home
-          </a>
-          <a href="#collections" onClick={closeMenu}>
-            Collections
-          </a>
-          <a href="#about" onClick={closeMenu}>
-            About
-          </a>
-          <a href="#b2b" onClick={closeMenu}>
-            B2B / Wholesale
-          </a>
-          <a href="#contact" onClick={closeMenu}>
-            Contact
-          </a>
+        <nav className={menuOpen ? "nav nav-open" : "nav"}>
+          <a href="#home" onClick={closeMenu}>Home</a>
+          <a href="#collections" onClick={closeMenu}>Collections</a>
+          <a href="#featured" onClick={closeMenu}>Featured</a>
+          <a href="#about" onClick={closeMenu}>Our Story</a>
+          <a href="#contact" onClick={closeMenu}>Contact</a>
         </nav>
 
-        {/* WhatsApp kept as current */}
-        <button
-          className="header-button"
-          onClick={() => {
-            window.location.href =
-              "https://wa.me/916377562064?text=" +
-              encodeURIComponent("Hello Lakshyam Jewellery");
-          }}
-        >
-          WhatsApp
-        </button>
+        <div className="header-actions">
+          <a
+            className="header-whatsapp"
+            href={whatsapp}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Enquire on WhatsApp
+          </a>
+
+          <button
+            className="menu-button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Open menu"
+          >
+            {menuOpen ? "×" : "☰"}
+          </button>
+        </div>
       </header>
 
-      <main>
-        {/* HERO */}
-        <section id="home" className="hero">
-          <div className="hero-image-wrap">
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className="hero-image"
-            />
+      {/* CATEGORY STRIP */}
+      <div className="category-strip">
+        <a href="#collections">Jadau Jewellery</a>
+        <a href="#collections">Kundan Jewellery</a>
+        <a href="#collections">Meena Jewellery</a>
+        <a href="#collections">Diamond Jewellery</a>
+        <a href="#collections">Bridal Jewellery</a>
+      </div>
 
-            <div className="image-overlay" />
+      {/* HERO */}
+      <main id="home">
+        <section className="hero">
+          <div className="hero-image">
+            <img src={slides[slide].image} alt={slides[slide].title} />
+            <div className="hero-shade"></div>
 
-            <button
-              className="arrow arrow-left"
-              onClick={prevSlide}
-              aria-label="Previous slide"
-            >
-              ‹
+            <div className="hero-content">
+              <div className="eyebrow">{slides[slide].small}</div>
+              <h1>{slides[slide].title}</h1>
+              <p>{slides[slide].text}</p>
+
+              <div className="hero-buttons">
+                <a href="#collections" className="gold-button">
+                  EXPLORE COLLECTION
+                </a>
+                <a
+                  href={whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="outline-button"
+                >
+                  B2B ENQUIRY
+                </a>
+              </div>
+            </div>
+
+            <button className="slider-arrow left" onClick={previousSlide}>
+              ←
             </button>
 
-            <button
-              className="arrow arrow-right"
-              onClick={nextSlide}
-              aria-label="Next slide"
-            >
-              ›
+            <button className="slider-arrow right" onClick={nextSlide}>
+              →
             </button>
 
-            <div className="dots">
-              {slides.map((item, index) => (
+            <div className="slider-dots">
+              {slides.map((_, index) => (
                 <button
-                  key={item.title}
-                  className={`dot ${
-                    index === activeSlide ? "dot-active" : ""
-                  }`}
-                  onClick={() => setActiveSlide(index)}
-                  aria-label={`Go to slide ${index + 1}`}
+                  key={index}
+                  className={index === slide ? "active" : ""}
+                  onClick={() => setSlide(index)}
+                  aria-label={`Slide ${index + 1}`}
                 />
               ))}
             </div>
           </div>
+        </section>
 
-          <div className="hero-content">
-            <div className="eyebrow">{slide.eyebrow}</div>
-
-            <h1>{slide.title}</h1>
-
-            <p>{slide.text}</p>
-
-            <div className="buttons">
-              <a href="#collections" className="primary-button">
-                Explore Collection
-              </a>
-
-              <a href="#contact" className="secondary-button">
-                Enquire Now
-              </a>
-            </div>
-
-            <div className="hero-bottom-line">
-              <span>Premium Jewellery</span>
-              <span>•</span>
-              <span>B2B & Wholesale</span>
-            </div>
-          </div>
+        {/* INTRO */}
+        <section className="intro section">
+          <div className="intro-small">LAKSHYAM JEWELLERY</div>
+          <h2>Crafted with tradition.<br />Presented with distinction.</h2>
+          <p>
+            Lakshyam Jewellery brings together the richness of Indian jewellery
+            traditions with a clean and refined catalogue experience.
+            Explore our Kundan, Meena, Jadau and Diamond collections.
+          </p>
         </section>
 
         {/* COLLECTIONS */}
-        <section id="collections" className="section">
+        <section id="collections" className="section collections-section">
           <div className="section-heading">
-            <div className="eyebrow">OUR COLLECTIONS</div>
-
-            <h2>Crafted With Royal Elegance</h2>
-
+            <div>
+              <span className="eyebrow dark">OUR COLLECTIONS</span>
+              <h2>Discover the collection.</h2>
+            </div>
             <p>
-              Explore our world of traditional and contemporary jewellery,
-              created for discerning jewellery businesses and elegant
-              occasions.
+              A curated selection created for jewellery lovers,
+              retailers and trade partners.
             </p>
           </div>
 
-          <div className="cards">
-            {collections.map((item, index) => (
-              <CollectionCard
-                key={item.title}
-                image={item.image}
-                title={item.title}
-                text={item.text}
-                number={`0${index + 1}`}
-              />
+          <div className="collection-grid">
+            {categories.map((item) => (
+              <a href={whatsapp} target="_blank" rel="noreferrer" className="collection-card" key={item.title}>
+                <div className="collection-image">
+                  <img src={item.image} alt={item.title} />
+                  <div className="collection-overlay"></div>
+                  <span>EXPLORE →</span>
+                </div>
+                <div className="collection-info">
+                  <small>{item.subtitle}</small>
+                  <h3>{item.title}</h3>
+                </div>
+              </a>
             ))}
           </div>
         </section>
 
         {/* B2B */}
-        <section id="b2b" className="split-section">
-          <div className="split-image">
-            <img
-              src="/Hero2.svg"
-              alt="Lakshyam Jewellery B2B collection"
-            />
-          </div>
-
-          <div className="split-content">
-            <div className="eyebrow">FOR JEWELLERY BUSINESSES</div>
-
-            <h2>Wholesale & B2B Jewellery</h2>
-
+        <section className="b2b">
+          <div className="b2b-inner">
+            <span className="eyebrow">FOR JEWELLERY BUSINESSES</span>
+            <h2>Built for the<br />trade.</h2>
             <p>
-              Lakshyam Jewellery brings together premium Kundan, Meena,
-              Diamond and Bridal jewellery for retailers, wholesalers,
-              designers and business partners.
+              Looking for distinctive jewellery collections for your business?
+              Connect with Lakshyam Jewellery for B2B and wholesale enquiries.
             </p>
 
-            <div className="feature-list">
-              <div>✓ Wholesale jewellery</div>
-              <div>✓ Retailer requirements</div>
-              <div>✓ Kundan & Meena collections</div>
-              <div>✓ Diamond & Bridal collections</div>
-              <div>✓ Business collaborations</div>
-              <div>✓ Custom requirements</div>
-            </div>
-
-            <a href="#contact" className="primary-button">
-              Discuss Your Requirement
+            <a
+              href={whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="gold-button"
+            >
+              TALK TO US ON WHATSAPP →
             </a>
           </div>
         </section>
 
-        {/* WHY LAKSHYAM */}
-        <section className="section section-alt">
-          <div className="section-heading">
-            <div className="eyebrow">WHY LAKSHYAM</div>
-
-            <h2>Built Around Craftsmanship & Trust</h2>
-
+        {/* FEATURED */}
+        <section id="featured" className="section featured-section">
+          <div className="center-heading">
+            <span className="eyebrow dark">CURATED FOR YOU</span>
+            <h2>Featured Jewellery</h2>
             <p>
-              A professional jewellery experience focused on quality,
-              design and long-term business relationships.
+              Explore a selection of our signature jewellery styles.
             </p>
           </div>
 
-          <div className="strength-grid">
-            {strengths.map((item) => (
-              <div className="strength-card" key={item.title}>
-                <div className="strength-icon">{item.icon}</div>
-
-                <h3>{item.title}</h3>
-
-                <p>{item.text}</p>
-              </div>
+          <div className="featured-grid">
+            {featured.map((item) => (
+              <a
+                href={whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="featured-card"
+                key={item.title}
+              >
+                <div className="featured-image">
+                  <img src={item.image} alt={item.title} />
+                </div>
+                <div className="featured-info">
+                  <small>{item.category}</small>
+                  <h3>{item.title}</h3>
+                  <span>ENQUIRE →</span>
+                </div>
+              </a>
             ))}
           </div>
         </section>
 
-        {/* ABOUT */}
-        <section id="about" className="split-section about-section">
-          <div className="split-image">
-            <img
-              src="/Hero3.svg"
-              alt="Lakshyam Jewellery craftsmanship"
-            />
+        {/* STORY */}
+        <section id="about" className="story">
+          <div className="story-image">
+            <img src="/Hero2.svg" alt="Lakshyam Jewellery craftsmanship" />
           </div>
 
-          <div className="split-content">
-            <div className="eyebrow">ABOUT LAKSHYAM</div>
-
-            <h2>Tradition Meets Timeless Design</h2>
-
+          <div className="story-content">
+            <span className="eyebrow dark">OUR STORY</span>
+            <h2>Tradition with a modern touch.</h2>
             <p>
-              Lakshyam Jewellery brings together the richness of Indian
-              craftsmanship with elegant modern design.
+              Jewellery is more than an ornament. It carries culture,
+              craftsmanship and stories from one generation to another.
+            </p>
+            <p>
+              Lakshyam Jewellery is built around this idea — bringing
+              traditional Indian jewellery into a refined, easy-to-explore
+              catalogue for today's customers and jewellery businesses.
             </p>
 
-            <p>
-              Our focus is on Kundan, Meena and Diamond jewellery, with
-              collections created for retailers, wholesalers, businesses
-              and those looking for timeless jewellery.
-            </p>
-
-            <div className="about-points">
+            <div className="story-points">
               <div>
-                <strong>Kundan</strong>
-                <span>Royal Indian craftsmanship</span>
+                <strong>01</strong>
+                <span>Curated Designs</span>
               </div>
-
               <div>
-                <strong>Meena</strong>
-                <span>Colourful traditional artistry</span>
+                <strong>02</strong>
+                <span>Easy Enquiry</span>
               </div>
-
               <div>
-                <strong>Diamond</strong>
-                <span>Elegant contemporary brilliance</span>
+                <strong>03</strong>
+                <span>Personal Service</span>
               </div>
             </div>
+          </div>
+        </section>
 
-            <a href="#contact" className="primary-button">
-              Know More
-            </a>
+        {/* VALUES */}
+        <section className="section values">
+          <div className="center-heading">
+            <span className="eyebrow dark">WHY LAKSHYAM</span>
+            <h2>Made for lasting relationships.</h2>
+          </div>
+
+          <div className="values-grid">
+            <div className="value">
+              <span>01</span>
+              <h3>Craftsmanship</h3>
+              <p>Traditional Indian jewellery aesthetics with attention to detail.</p>
+            </div>
+
+            <div className="value">
+              <span>02</span>
+              <h3>Curated Collections</h3>
+              <p>Kundan, Meena, Jadau and Diamond styles brought together.</p>
+            </div>
+
+            <div className="value">
+              <span>03</span>
+              <h3>B2B Focus</h3>
+              <p>A simple way for jewellery businesses to enquire and connect.</p>
+            </div>
+
+            <div className="value">
+              <span>04</span>
+              <h3>Personal Service</h3>
+              <p>Direct communication for genuine product and business enquiries.</p>
+            </div>
           </div>
         </section>
 
         {/* CTA */}
         <section className="cta">
-          <div className="eyebrow">LAKSHYAM JEWELLERY</div>
+          <div>
+            <span className="eyebrow">LET'S CONNECT</span>
+            <h2>Looking for something<br />special?</h2>
+          </div>
 
-          <h2>Jewellery That Speaks of Elegance</h2>
-
-          <p>
-            Looking for jewellery collections for your business or your
-            next special occasion? Let us discuss your requirement.
-          </p>
-
-          <a href="#contact" className="light-button">
-            Start an Enquiry
+          <a
+            href={whatsapp}
+            target="_blank"
+            rel="noreferrer"
+            className="light-button"
+          >
+            WHATSAPP ENQUIRY →
           </a>
+        </section>
+
+        {/* FAQ */}
+        <section className="section faq">
+          <div className="center-heading">
+            <span className="eyebrow dark">NEED HELP?</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+
+          <div className="faq-list">
+            <details>
+              <summary>How can I enquire about a design?</summary>
+              <p>
+                Use the WhatsApp enquiry button and connect directly with
+                Lakshyam Jewellery.
+              </p>
+            </details>
+
+            <details>
+              <summary>Can I request product photos?</summary>
+              <p>
+                Yes. Send your enquiry on WhatsApp and discuss the required
+                designs directly.
+              </p>
+            </details>
+
+            <details>
+              <summary>Do you handle B2B / wholesale enquiries?</summary>
+              <p>
+                Yes. Lakshyam Jewellery is focused on jewellery trade and
+                wholesale enquiries.
+              </p>
+            </details>
+
+            <details>
+              <summary>Can I enquire about Kundan and Meena jewellery?</summary>
+              <p>
+                Yes. You can enquire about Kundan, Meena, Jadau and Diamond
+                jewellery through WhatsApp.
+              </p>
+            </details>
+          </div>
         </section>
 
         {/* CONTACT */}
         <section id="contact" className="contact">
-          <div className="eyebrow">GET IN TOUCH</div>
-
-          <h2>Let's Create Something Beautiful</h2>
-
-          <p className="contact-text">
-            For product enquiries, wholesale requirements or business
-            collaborations, contact Lakshyam Jewellery.
-          </p>
-
-          <div className="contact-info">
-            <div className="contact-card">
-              <div className="contact-icon">☎</div>
-
-              <div>
-                <div className="contact-label">CALL US</div>
-
-                <a
-                  href="tel:+916377562064"
-                  className="contact-value"
-                >
-                  +91 63775 62064
-                </a>
-              </div>
+          <div className="contact-inner">
+            <div>
+              <span className="eyebrow">LAKSHYAM JEWELLERY</span>
+              <h2>Let's talk jewellery.</h2>
+              <p>
+                For collections, product enquiries and B2B opportunities,
+                connect with us directly.
+              </p>
             </div>
 
-            <div className="contact-card">
-              <div className="contact-icon">◆</div>
-
-              <div>
-                <div className="contact-label">BUSINESS</div>
-
-                <div className="contact-value">
-                  B2B & Wholesale Jewellery
-                </div>
-              </div>
+            <div className="contact-box">
+              <small>WHATSAPP</small>
+              <strong>+91 63775 62064</strong>
+              <a
+                href={whatsapp}
+                target="_blank"
+                rel="noreferrer"
+              >
+                START ENQUIRY →
+              </a>
             </div>
-          </div>
-
-          <div className="contact-buttons">
-            <a href="tel:+916377562064" className="primary-button">
-              Call Us
-            </a>
-
-            {/* WhatsApp kept as current */}
-            <button
-              className="secondary-button"
-              onClick={() => {
-                window.location.href =
-                  "https://wa.me/916377562064?text=" +
-                  encodeURIComponent("Hello Lakshyam Jewellery");
-              }}
-            >
-              WhatsApp Enquiry
-            </button>
           </div>
         </section>
       </main>
 
       {/* FOOTER */}
       <footer className="footer">
-        <div className="footer-top">
-          <div>
-            <div className="footer-brand">
-              LAKSHYAM JEWELLERY
+        <div className="footer-main">
+          <div className="footer-brand">
+            <div className="footer-logo">
+              <span>L</span>
+              <div>
+                LAKSHYAM
+                <small>JEWELLERY</small>
+              </div>
             </div>
 
-            <div className="footer-tagline">
-              Kundan • Meena • Diamond
-            </div>
-
-            <p className="footer-description">
-              Premium Indian jewellery for modern businesses and
-              timeless occasions.
-            </p>
+            <p>KUNDAN • MEENA • DIAMOND</p>
+            <span>Premium Indian Jewellery • B2B & Wholesale</span>
           </div>
 
-          <div className="footer-links">
-            <a href="#home">Home</a>
-            <a href="#collections">Collections</a>
-            <a href="#about">About</a>
-            <a href="#b2b">B2B / Wholesale</a>
+          <div className="footer-column">
+            <h4>Collections</h4>
+            <a href="#collections">Jadau Jewellery</a>
+            <a href="#collections">Kundan Jewellery</a>
+            <a href="#collections">Meena Jewellery</a>
+            <a href="#collections">Diamond Jewellery</a>
+          </div>
+
+          <div className="footer-column">
+            <h4>Company</h4>
+            <a href="#about">Our Story</a>
+            <a href="#featured">Featured</a>
             <a href="#contact">Contact</a>
+            <a href="#home">Back to top ↑</a>
+          </div>
+
+          <div className="footer-column">
+            <h4>Contact</h4>
+            <span>WhatsApp</span>
+            <strong>+91 63775 62064</strong>
+            <a href={whatsapp} target="_blank" rel="noreferrer">
+              Start Enquiry →
+            </a>
           </div>
         </div>
 
         <div className="footer-bottom">
-          © {new Date().getFullYear()} Lakshyam Jewellery. All Rights Reserved.
+          <span>© 2026 Lakshyam Jewellery. All rights reserved.</span>
+          <span>KUNDAN • MEENA • DIAMOND</span>
         </div>
       </footer>
-    </div>
-  );
-}
 
-function CollectionCard({ image, title, text, number }) {
-  return (
-    <div className="collection-card">
-      <div className="card-image-wrap">
-        <img
-          src={image}
-          alt={`${title} jewellery`}
-          className="card-image"
-        />
-
-        <div className="card-overlay" />
-      </div>
-
-      <div className="card-body">
-        <div className="card-number">{number}</div>
-
-        <h3>{title}</h3>
-
-        <p>{text}</p>
-
-        <a href="#contact">Enquire →</a>
-      </div>
+      <a
+        href={whatsapp}
+        target="_blank"
+        rel="noreferrer"
+        className="floating-whatsapp"
+        aria-label="WhatsApp"
+      >
+        WA
+      </a>
     </div>
   );
 }
