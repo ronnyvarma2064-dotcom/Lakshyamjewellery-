@@ -1,3 +1,5 @@
+const SUPABASE_URL = "https://vcpqckhwesozzeordxys.supabase.co";
+const SUPABASE_KEY = sb_publishable_KB4RfDvMXOBlSuBtvx1KHA_RBCMDbpB
 const slides = [
   {
     image: "Hero.svg",
