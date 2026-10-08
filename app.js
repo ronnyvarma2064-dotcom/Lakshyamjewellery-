@@ -54,36 +54,7 @@ async function loadProducts() {
 }
 
 loadProducts();
-  if (!collectionGrid || !data) return;
-
-  data.forEach((Product) => {
-    const card = document.createElement("a");
-
-    card.href = "https://wa.me/916377562064";
-    card.target = "_blank";
-    card.className = "collection-card";
-
-    card.innerHTML = `
-      <div class="collection-image">
-        <img
-          src="${Product.Image_url || ""}"
-          alt="${Product.Name || "Lakshyam Jewellery"}"
-        >
-        <div class="collection-overlay"></div>
-        <span>ENQUIRE →</span>
-      </div>
-
-      <div class="collection-info">
-        <small>${Product.Category || "JEWELLERY"}</small>
-        <h3>${Product.Name || "Jewellery"}</h3>
-      </div>
-    `;
-
-    collectionGrid.appendChild(card);
-  });
-}
-
-loadProducts();
+  
 const slides = [
   {
     image: "hero.svg",
