@@ -1,5 +1,24 @@
 const SUPABASE_URL = "https://vcpqckhwesozzeordxys.supabase.co";
 const SUPABASE_KEY = sb_publishable_KB4RfDvMXOBlSuBtvx1KHA_RBCMDbpB
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+async function loadProducts() {
+  const { data, error } = await supabaseClient
+    .from("products")
+    .select("*");
+
+  if (error) {
+    console.error("Products load error:", error);
+    return;
+  }
+
+  console.log("Products:", data);
+}
+
+loadProducts();
 const slides = [
   {
     image: "Hero.svg",
